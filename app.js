@@ -15,7 +15,10 @@ const session = require('express-session');
 const passport = require('./handlers/passport');
 const cors = require('cors');
 
-mongoose.connect(process.env.PSYCHE_DB, {useNewUrlParser: true})
+mongoose.connect(process.env.PSYCHE_DB, {
+  useCreateIndex: true,
+  useNewUrlParser: true  
+})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
