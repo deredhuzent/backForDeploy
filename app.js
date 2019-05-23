@@ -1,6 +1,6 @@
-if(process.env.ENV !== 'production'){
+
   require('dotenv').config();
-}
+
 
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -46,7 +46,8 @@ app.use(passport.session());
 app.use(
   cors({
   credentials: true,
-  origin: ['http://localhost:3000', 'http://localhost:3001']
+  origin: true
+  // origin: ['http://localhost:3000', 'http://localhost:3001']
 }))
 
 // Middleware Setup
