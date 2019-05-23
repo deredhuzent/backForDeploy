@@ -4,7 +4,7 @@ const {isLogged} = require('../handlers/middlewares');
 const uploadCloud = require('../handlers/cloudinary');
 
 router.get('/', (req, res, next) => {
-  
+  res.send("Hola jueces")
 });
 
 router.get('/profile/:id', isLogged, (req, res, next) => {
